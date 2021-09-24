@@ -1,0 +1,89 @@
+.main-wrapper {
+  width: 90%;
+  margin: auto;
+  height: auto;
+}
+.main-wrapper-big {
+  width: 100%;
+  margin: auto;
+  height: 55rem;
+  overflow: scroll;
+  margin-bottom: 2rem;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: white;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  color: black;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+}
+
+.image {
+  width: 12rem;
+  height: auto;
+  display: block;
+}
+
+.btn-wrapper {
+  display: grid;
+  grid-template-rows: max-content;
+  grid-template-columns: 6rem;
+  grid-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+.plus-minus {
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  font-size: 2rem;
+  border: none;
+  background-color: rgb(204, 202, 202);
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+.button:hover {
+  transform: translateY(-2px);
+}
+.button:active {
+  transform: translateY(-1px);
+}
+.button:first-child {
+  padding-bottom: 0.6rem;
+}
+
+.desc-info {
+  width: 17rem;
+}
+.name {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+.price {
+  font-size: 1.4rem;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+.quantity {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.total {
+  font-size: 2.5rem;
+  color: black;
+}

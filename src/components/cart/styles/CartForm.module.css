@@ -1,0 +1,78 @@
+.form {
+  width: 100%;
+  text-align: center;
+}
+
+.form input {
+  width: 20rem;
+  font-size: 1.8rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 2px solid black;
+}
+.form input.invalid {
+  border-color: red;
+}
+
+.btns-wrapper {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: 3rem;
+}
+.button-simple {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+.button-simple:hover {
+  transform: translateY(-2px);
+}
+.button-simple:active {
+  transform: translateY(-1px);
+}
+.button-simple:disabled {
+  transform: none;
+  cursor: default;
+}
+
+.para-invalid-visible {
+  font-size: 1.2rem;
+  color: red;
+  margin: 0;
+  margin-bottom: 0.2rem;
+}
+.para-invalid-invisible {
+  visibility: hidden;
+  font-size: 1.2rem;
+  color: red;
+  margin: 0;
+  margin-bottom: 0.2rem;
+}
+
+.error {
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 1.7rem;
+  color: red;
+  text-align: center;
+}
+.error-btn {
+  display: block;
+  margin: auto;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+}
+.error-btn:hover {
+  transform: translateY(-2px);
+}

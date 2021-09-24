@@ -1,0 +1,45 @@
+.product-wrapper {
+  display: inline-block;
+  height: auto;
+  position: relative;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 2rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.rating-wrapper {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  width: 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rating {
+  color: gold;
+  font-size: 2.5rem;
+}
+
+.button-wrapper {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+.product-image {
+  width: 25rem;
+  height: auto;
+}
+
+.name {
+  font-size: 2.2rem;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+.price {
+  font-size: 1.7rem;
+  margin: 0 0 1.5rem;
+}

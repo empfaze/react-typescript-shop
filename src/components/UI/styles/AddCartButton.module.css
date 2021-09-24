@@ -1,0 +1,17 @@
+.cart-product {
+  display: block;
+  height: 3.5rem;
+  width: 3.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.cart-product:hover {
+  transform: translateY(-1px);
+}
+
+.product-in-cart {
+  display: block;
+  height: 3.5rem;
+  width: 3.5rem;
+  cursor: default;
+}

@@ -1,0 +1,12 @@
+.delete-cart {
+  display: block;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  align-self: center;
+  transition: all 0.3s;
+  margin: auto;
+}
+.delete-cart:hover {
+  transform: translateY(-1px);
+}

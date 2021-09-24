@@ -1,0 +1,20 @@
+.main-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  grid-gap: 2.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.text {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.select {
+  font-size: 1.5rem;
+  padding: 0 0.5rem;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+}

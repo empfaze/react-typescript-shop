@@ -1,0 +1,11 @@
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 30rem);
+  grid-gap: 4rem;
+  padding: 3rem 5rem;
+}
+
+.error {
+  font-size: 4rem;
+  text-align: center;
+}
