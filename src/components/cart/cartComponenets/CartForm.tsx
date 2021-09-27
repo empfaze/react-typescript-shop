@@ -76,6 +76,7 @@ const CartForm: FC = () => {
 
   useEffect(() => {
     if (nameIsValid && phoneIsValid) setFormIsValid(true);
+    else setFormIsValid(false);
   }, [nameIsValid, phoneIsValid]);
 
   function submitHandler(e: FormEvent<HTMLFormElement>): void {
@@ -162,7 +163,9 @@ const CartForm: FC = () => {
             Something went wrong...Please, check the validity of the entered
             data and try again.
           </p>
-          <button onClick={errorResetHandler} className={classes['error-btn']}>Try Later</button>
+          <button onClick={errorResetHandler} className={classes["error-btn"]}>
+            Try Later
+          </button>
         </>
       )}
       {!isLoading && !error && (

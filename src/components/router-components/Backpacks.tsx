@@ -7,6 +7,7 @@ import Spinner from "../UI/Spinner";
 import ProductItem from "./item/ProductItem";
 
 import "./AllProducts.css";
+import { FetchedProduct } from "../../types/allProducts";
 
 const Backpacks: FC = () => {
   const dispatch = useTypedDispatch();
@@ -16,8 +17,21 @@ const Backpacks: FC = () => {
 
   function handleData(arr: any[]): void {
     const newArr = arr.map((item) => ({ ...item, inCart: false, quantity: 1 }));
+
     dispatch(ProductsActions.addBackpacks(newArr));
-    dispatch(ProductsActions.sortBackpacks({ type1: 'price', type2: "asc" }))
+    dispatch(ProductsActions.sortBackpacks({ type1: "price", type2: "asc" }));
+
+    const localCart = localStorage.getItem("cart");
+    if (typeof localCart === "string") {
+      const parsedLocalCart: FetchedProduct[] = JSON.parse(localCart);
+      const backpackLocalBags = parsedLocalCart.filter(
+        (item) => item.category === 1
+      );
+
+      backpackLocalBags.forEach((backpackLocalBag) => {
+        dispatch(ProductsActions.changeInCartBackpacks(backpackLocalBag.id));
+      });
+    }
   }
 
   useEffect(() => {

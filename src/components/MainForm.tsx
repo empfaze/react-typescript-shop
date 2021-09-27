@@ -14,7 +14,7 @@ function validateEmail(str: string) {
   return str.trim().includes("@");
 }
 function validatePassword(str: string) {
-  return str.length > 6;
+  return str.trim().length > 6;
 }
 
 const AuthForm: FC = () => {
@@ -56,6 +56,7 @@ const AuthForm: FC = () => {
 
   useEffect(() => {
     if (emailIsValid && passwordIsValid) setFormIsValid(true);
+    else setFormIsValid(false);
   }, [emailIsValid, passwordIsValid]);
 
   // handling recieved data from firebase
@@ -95,10 +96,6 @@ const AuthForm: FC = () => {
         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBm2_AGArJO9rGAtXfjnzRvPZhWqq5cRdY";
       sendToAuth(url, user, handleData);
     }
-
-    // clearEmail();
-    // clearPassword();
-    // setFormIsValid(false);
   }
 
   function resetHandler(): void {

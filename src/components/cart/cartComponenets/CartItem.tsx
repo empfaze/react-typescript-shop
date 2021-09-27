@@ -23,23 +23,6 @@ const CartItem: FC<FetchedProduct> = ({
   const products = useTypedSelector((state) => state.cart.items);
   const totalPrice = price * quantity;
 
-  // function getNecessaryCategory(type: string, prodId: number, prodCategory: number): void {
-  //   switch (prodCategory) {
-  //     case 1:
-  //       if (type === 'ADD') dispatch(ProductsActions.incBackpacksQuantity(prodId));
-  //       else dispatch(ProductsActions.decBackpacksQuantity(prodId));
-  //       break;
-  //     case 2:
-  //       if (type === 'ADD') dispatch(ProductsActions.incMessengerBagsQuantity(prodId));
-  //       else dispatch(ProductsActions.decMessengerBagsQuantity(prodId));
-  //       break;
-  //     case 3:
-  //       if (type === 'ADD') dispatch(ProductsActions.incBusinessBagsQuantity(prodId));
-  //       else dispatch(ProductsActions.decBusinessBagsQuantity(prodId));
-  //       break;
-  //   }
-  // }
-
   function incQuantityHandler(prodId: number): void {
     dispatch(cartActions.incProductQuantity(prodId));
   }

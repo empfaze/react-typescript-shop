@@ -3,19 +3,35 @@ import useFetch from "../../hooks/useFetch";
 import { useTypedDispatch } from "../../hooks/useTypedDispatch";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { ProductsActions } from "../../store/slices/allProducts";
+import { FetchedProduct } from "../../types/allProducts";
 import Spinner from "../UI/Spinner";
 import ProductItem from "./item/ProductItem";
 
 const BusinessBags: FC = () => {
-  const dispatch = useTypedDispatch()
-  const businessBags = useTypedSelector(state => state.products.businessBags);
+  const dispatch = useTypedDispatch();
+  const businessBags = useTypedSelector((state) => state.products.businessBags);
 
   const { error, isLoading, sendRequest: getProducts } = useFetch();
 
   function handleData(arr: any[]): void {
     const newArr = arr.map((item) => ({ ...item, inCart: false, quantity: 1 }));
+
     dispatch(ProductsActions.addBusinessBags(newArr));
-    dispatch(ProductsActions.sortBusinessBags({ type1: 'price', type2: "asc" }))
+    dispatch(
+      ProductsActions.sortBusinessBags({ type1: "price", type2: "asc" })
+    );
+
+    const localCart = localStorage.getItem("cart");
+    if (typeof localCart === "string") {
+      const parsedLocalCart: FetchedProduct[] = JSON.parse(localCart);
+      const businessLocalBags = parsedLocalCart.filter(
+        (item) => item.category === 3
+      );
+
+      businessLocalBags.forEach((businessLocalBag) => {
+        dispatch(ProductsActions.changeInCartBusinessBags(businessLocalBag.id));
+      });
+    }
   }
 
   useEffect(() => {
@@ -51,6 +67,6 @@ const BusinessBags: FC = () => {
         ))}
       </section>
     </>
-  )
+  );
 };
 export default BusinessBags;

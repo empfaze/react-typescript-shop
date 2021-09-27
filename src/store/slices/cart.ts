@@ -18,6 +18,9 @@ export const cartSlice = createSlice({
     addToCart: (state, action: CartAddPayload) => {
       const product = action.payload;
       state.items = [...state.items, product];
+
+      const localCart = [...state.items];
+      localStorage.setItem("cart", JSON.stringify(localCart));
     },
     removeFromCart: (state, action: CartRemovePayload) => {
       const product = state.items.find(
@@ -26,6 +29,20 @@ export const cartSlice = createSlice({
       product!.quantity = 1;
 
       state.items = state.items.filter((item) => item.id !== action.payload);
+
+      const localCart = [...state.items];
+      localStorage.setItem("cart", JSON.stringify(localCart));
+    },
+    setCartFromLocalState: (state) => {
+      const localCart = localStorage.getItem("cart");
+
+      if (typeof localCart === "string") {
+        const parsedLocalCart = JSON.parse(localCart);
+
+        if (parsedLocalCart.length > 0) {
+          state.items = [...parsedLocalCart];
+        }
+      }
     },
 
     openCart: (state) => {
@@ -38,10 +55,16 @@ export const cartSlice = createSlice({
     incProductQuantity: (state, action: QuantityHandlerPayload) => {
       const product = state.items.find((item) => item.id === action.payload);
       product!.quantity++;
+
+      const localCart = [...state.items];
+      localStorage.setItem("cart", JSON.stringify(localCart));
     },
     decProductQuantity: (state, action: QuantityHandlerPayload) => {
       const product = state.items.find((item) => item.id === action.payload);
       product!.quantity--;
+
+      const localCart = [...state.items];
+      localStorage.setItem("cart", JSON.stringify(localCart));
     },
 
     setSuccessfullState: (state) => {
