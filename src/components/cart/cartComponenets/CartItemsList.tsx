@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
 
 import classes from "../styles/CartItem.module.css";
@@ -16,21 +17,32 @@ const CartItemsList: FC = () => {
   return (
     <>
       <div className={classes[wrapperClassName]}>
-        <div className={classes["main-wrapper"]}>
+        <TransitionGroup className={classes["main-wrapper"]}>
           {cartItems.map((item) => (
-            <CartItem
+            <CSSTransition
               key={item.id}
-              id={item.id}
-              category={item.category}
-              rating={item.rating}
-              inCart={item.inCart}
-              name={item.name}
-              price={item.price}
-              photo={item.photo}
-              quantity={item.quantity}
-            />
+              timeout={300}
+              classNames={{
+                enter: "",
+                enterActive: "",
+                exit: classes["delete-animation-exit"],
+                exitActive: classes["delete-animation-exit-active"],
+              }}
+            >
+              <CartItem
+                key={item.id}
+                id={item.id}
+                category={item.category}
+                rating={item.rating}
+                inCart={item.inCart}
+                name={item.name}
+                price={item.price}
+                photo={item.photo}
+                quantity={item.quantity}
+              />
+            </CSSTransition>
           ))}
-        </div>
+        </TransitionGroup>
       </div>
       <p className={classes.total}>Total Price: {totalPrice}&nbsp;&#8381;</p>
     </>

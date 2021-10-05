@@ -2,17 +2,14 @@ import { FC, MouseEvent } from "react";
 import { useTypedDispatch } from "../../hooks/useTypedDispatch";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { cartActions } from "../../store/slices/cart";
-
-import CartHeader from "./cartComponenets/CartHeader";
-import CartEmpty from "./cartComponenets/CartEmpty";
-import CartItemsList from "./cartComponenets/CartItemsList";
+import { CSSTransition } from "react-transition-group";
 
 import classes from "./styles/Cart.module.css";
-import CartForm from "./cartComponenets/CartForm";
-import Success from "./cartComponenets/Success";
+import CartBody from "./cartComponenets/CartBody";
 
 const Cart: FC = () => {
-  const { items: cartItems, success } = useTypedSelector((state) => state.cart);
+  const { success } = useTypedSelector((state) => state.cart);
+  const { cartIsShown } = useTypedSelector((state) => state.cart);
   const dispatch = useTypedDispatch();
 
   function closeHandler(e: MouseEvent<HTMLDivElement>): void {
@@ -24,22 +21,23 @@ const Cart: FC = () => {
 
   return (
     <>
-      <div className={classes["cart-backdrop"]} onClick={closeHandler} />
-      <div className={classes.cart}>
-        {!success && (
-          <>
-            <CartHeader />
-            {cartItems.length === 0 && <CartEmpty />}
-            {cartItems.length > 0 && (
-              <>
-                <CartItemsList />
-                <CartForm />
-              </>
-            )}
-          </>
-        )}
-        {success && <Success />}
-      </div>
+      {cartIsShown && (
+        <div className={classes["cart-backdrop"]} onClick={closeHandler} />
+      )}
+      <CSSTransition
+        in={cartIsShown}
+        timeout={300}
+        classNames={{
+          enter: "",
+          enterActive: classes.cartOpened,
+          exit: "",
+          exitActive: classes.cartClosed,
+        }}
+        mountOnEnter
+        unmountOnExit
+      >
+        <CartBody />
+      </CSSTransition>
     </>
   );
 };
