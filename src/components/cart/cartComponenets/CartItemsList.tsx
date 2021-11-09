@@ -12,7 +12,7 @@ const CartItemsList: FC = () => {
     0
   );
 
-  const wrapperClassName = cartItems.length > 3 ? "main-wrapper-big" : "";
+  const wrapperClassName = cartItems.length > 2 ? "main-wrapper-big" : "";
 
   return (
     <>
