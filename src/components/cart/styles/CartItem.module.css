@@ -6,7 +6,7 @@
 .main-wrapper-big {
   width: 100%;
   margin: auto;
-  height: 50vh;
+  height: 40vh;
   overflow: scroll;
   margin-bottom: 2rem;
 }
@@ -84,8 +84,9 @@
 }
 
 .total {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   color: black;
+  margin: 0 0 1rem;
 }
 
 .delete-animation-exit {

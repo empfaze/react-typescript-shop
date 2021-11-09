@@ -188,7 +188,7 @@ const CartForm: FC = () => {
             <input
               type="tel"
               id="phone"
-              placeholder="Phone"
+              placeholder="Phone (11 numbers)"
               maxLength={11}
               className={phoneInputInvalid}
               value={phone}
