@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/empfaze/react-typescript-shop/static/css/main.ee753b55.chunk.css",
-    "main.js": "/empfaze/react-typescript-shop/static/js/main.7533e6da.chunk.js",
-    "main.js.map": "/empfaze/react-typescript-shop/static/js/main.7533e6da.chunk.js.map",
+    "main.js": "/empfaze/react-typescript-shop/static/js/main.5466275d.chunk.js",
+    "main.js.map": "/empfaze/react-typescript-shop/static/js/main.5466275d.chunk.js.map",
     "runtime-main.js": "/empfaze/react-typescript-shop/static/js/runtime-main.b52bae5d.js",
     "runtime-main.js.map": "/empfaze/react-typescript-shop/static/js/runtime-main.b52bae5d.js.map",
-    "static/js/2.d735fcd1.chunk.js": "/empfaze/react-typescript-shop/static/js/2.d735fcd1.chunk.js",
-    "static/js/2.d735fcd1.chunk.js.map": "/empfaze/react-typescript-shop/static/js/2.d735fcd1.chunk.js.map",
+    "static/js/2.1f618258.chunk.js": "/empfaze/react-typescript-shop/static/js/2.1f618258.chunk.js",
+    "static/js/2.1f618258.chunk.js.map": "/empfaze/react-typescript-shop/static/js/2.1f618258.chunk.js.map",
     "static/js/3.e623b3fb.chunk.js": "/empfaze/react-typescript-shop/static/js/3.e623b3fb.chunk.js",
     "static/js/3.e623b3fb.chunk.js.map": "/empfaze/react-typescript-shop/static/js/3.e623b3fb.chunk.js.map",
     "index.html": "/empfaze/react-typescript-shop/index.html",
     "static/css/main.ee753b55.chunk.css.map": "/empfaze/react-typescript-shop/static/css/main.ee753b55.chunk.css.map",
-    "static/js/2.d735fcd1.chunk.js.LICENSE.txt": "/empfaze/react-typescript-shop/static/js/2.d735fcd1.chunk.js.LICENSE.txt",
+    "static/js/2.1f618258.chunk.js.LICENSE.txt": "/empfaze/react-typescript-shop/static/js/2.1f618258.chunk.js.LICENSE.txt",
     "static/media/add-to-cart.dfdd5b13.svg": "/empfaze/react-typescript-shop/static/media/add-to-cart.dfdd5b13.svg",
     "static/media/Auth.module.css": "/empfaze/react-typescript-shop/static/media/bg1.afe688f7.jpg",
     "static/media/delete-from-cart.4d45ad1b.svg": "/empfaze/react-typescript-shop/static/media/delete-from-cart.4d45ad1b.svg",
@@ -20,8 +20,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b52bae5d.js",
-    "static/js/2.d735fcd1.chunk.js",
+    "static/js/2.1f618258.chunk.js",
     "static/css/main.ee753b55.chunk.css",
-    "static/js/main.7533e6da.chunk.js"
+    "static/js/main.5466275d.chunk.js"
   ]
 }
