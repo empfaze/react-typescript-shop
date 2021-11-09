@@ -153,7 +153,7 @@ const AuthForm: FC = () => {
             <input
               type="text"
               id="password"
-              placeholder="Password (min 6 chars)"
+              placeholder="Password (min 7 chars)"
               className={passwordInputInvalid}
               value={password}
               onChange={passwordChangeHandler}
