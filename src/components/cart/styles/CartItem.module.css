@@ -6,7 +6,7 @@
 .main-wrapper-big {
   width: 100%;
   margin: auto;
-  height: 55rem;
+  height: 55vh;
   overflow: scroll;
   margin-bottom: 2rem;
 }

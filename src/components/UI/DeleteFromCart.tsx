@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import DeleteCartIcon from "../../assets/delete-from-cart.svg";
+import DeleteCartIcon from "../../assets/delete-from-cart.png";
 import { useTypedDispatch } from "../../hooks/useTypedDispatch";
 import { cartActions } from "../../store/slices/cart";
 import { ProductsActions } from "../../store/slices/allProducts";

@@ -3,7 +3,7 @@ import { FC } from "react";
 import { useTypedDispatch } from "../../hooks/useTypedDispatch";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 
-import AddCartIcon from "../../assets/add-to-cart.svg";
+import AddCartIcon from "../../assets/add-to-cart.png";
 import classes from "./styles/AddCartButton.module.css";
 import { cartActions } from "../../store/slices/cart";
 import { ProductsActions } from "../../store/slices/allProducts";

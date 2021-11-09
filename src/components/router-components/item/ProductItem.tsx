@@ -1,7 +1,7 @@
 import { FC } from "react";
 import AddCartButton from "../../UI/AddCartButton";
 import AddedToCart from "../../UI/Added";
-import Star from "../../UI/Star";
+import StarIcon from '../../../assets/star.png';
 
 import "./ProductItem.css";
 
@@ -29,7 +29,7 @@ const ProductItem: FC<ProductItemProps> = ({
     <div key={id} className="product-wrapper">
       <div className="rating-wrapper">
         <span className="rating">{rating}</span>
-        <Star />
+        <img src={StarIcon} alt="Star Icon" style={{height: '2.5rem', width: '2.5rem'}} />
       </div>
       <div className="button-wrapper">
         {!inCart && <AddCartButton id={id} category={category} />}
