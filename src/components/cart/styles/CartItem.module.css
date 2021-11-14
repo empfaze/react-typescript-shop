@@ -12,11 +12,18 @@
 }
 
 .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 
   background-color: white;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   color: black;
   padding: 1rem 1.5rem;
@@ -31,15 +38,33 @@
 }
 
 .btn-wrapper {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-rows: -webkit-max-content;
+  -ms-grid-rows: max-content;
+  grid-template-rows: -webkit-max-content;
   grid-template-rows: max-content;
+  -ms-grid-columns: 6rem;
   grid-template-columns: 6rem;
   grid-gap: 2rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
+
+.btn-wrapper > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
 .plus-minus {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .button {
@@ -51,13 +76,20 @@
   border-radius: 50%;
   cursor: pointer;
   color: white;
+  -webkit-box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 .button:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
   transform: translateY(-2px);
 }
 .button:active {
+  -webkit-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
   transform: translateY(-1px);
 }
 .button:first-child {
@@ -94,5 +126,7 @@
 }
 .delete-animation-exit-active {
   opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }

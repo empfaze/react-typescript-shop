@@ -1,0 +1,57 @@
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  height: 4rem;
+}
+
+.stripe {
+  width: 5rem;
+  height: 0.5rem;
+  background-color: white;
+  margin-left: 5rem;
+  position: relative;
+}
+
+.stripe::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 5rem;
+  height: 0.5rem;
+  background-color: white;
+  left: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.wrapper:hover .stripe::before {
+  -webkit-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  transform: translateY(-1px);
+}
+
+.stripe::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 5rem;
+  height: 0.5rem;
+  background-color: white;
+  left: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.wrapper:hover .stripe::after {
+  -webkit-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  transform: translateY(1px);
+}

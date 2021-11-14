@@ -1,7 +1,13 @@
 .main-wrapper {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: -webkit-max-content 2.5rem -webkit-max-content 2.5rem -webkit-max-content;
+  -ms-grid-columns: max-content 2.5rem max-content 2.5rem max-content;
+  grid-template-columns: repeat(3, -webkit-max-content);
   grid-template-columns: repeat(3, max-content);
   grid-gap: 2.5rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin-top: 2rem;
 }
@@ -16,5 +22,6 @@
   padding: 0 0.5rem;
   text-transform: uppercase;
   border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
 }

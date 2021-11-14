@@ -35,9 +35,9 @@ const useHttp = () => {
         const data = await response.json();
         handleRecievedData(data);
       } catch (err: any) {
+        setIsLoading(false);
         setError(err.message || "Something went wrong!");
       }
-      setIsLoading(false);
     },
     []
   );

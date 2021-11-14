@@ -1,4 +1,4 @@
-import { FC, FormEvent, useEffect, useReducer, useState } from "react";
+import React, { FC, FormEvent, useEffect, useReducer, useState } from "react";
 import useInput from "../../../hooks/useInput";
 import Spinner from "../../UI/Spinner";
 
@@ -8,12 +8,13 @@ import { useTypedSelector } from "../../../hooks/useTypedSelector";
 import { useTypedDispatch } from "../../../hooks/useTypedDispatch";
 import { cartActions } from "../../../store/slices/cart";
 import { ProductsActions } from "../../../store/slices/allProducts";
+import usePhone from "../../../hooks/usePhone";
 
 function validateName(str: string) {
   return str.trim() !== "";
 }
 function validatePhone(str: string) {
-  return str.length > 10;
+  return str.length === 15;
 }
 
 interface RequestState {
@@ -69,10 +70,10 @@ const CartForm: FC = () => {
     valueChangeHandler: phoneChangeHandler,
     valueBlurHandler: phoneBlurHandler,
     reset: clearPhone,
-  } = useInput(validatePhone);
+  } = usePhone(validatePhone);
 
   // form state
-  const [formIsValid, setFormIsValid] = useState<boolean>(false);
+  const [formIsValid, setFormIsValid] = useState<boolean | null>(null);
 
   useEffect(() => {
     if (nameIsValid && phoneIsValid) setFormIsValid(true);
@@ -109,13 +110,12 @@ const CartForm: FC = () => {
         dispatch(cartActions.setSuccessfullState());
       } catch (err) {
         dispatchState({ type: "ERROR" });
+        clearName();
+        clearPhone();
+        setFormIsValid(null);
       }
     }
     sendData(url, user);
-
-    clearName();
-    clearPhone();
-    setFormIsValid(false);
   }
 
   function removeAllFromCart(prodId: number, prodCategory: number): void {
@@ -133,11 +133,7 @@ const CartForm: FC = () => {
 
     dispatch(cartActions.removeFromCart(prodId));
   }
-  function resetFormHandler(): void {
-    clearName();
-    clearPhone();
-    setFormIsValid(false);
-  }
+
   function errorResetHandler(): void {
     dispatchState({ type: "RESET" });
   }
@@ -188,9 +184,9 @@ const CartForm: FC = () => {
             <input
               type="tel"
               id="phone"
-              placeholder="Phone (11 numbers)"
-              maxLength={11}
+              maxLength={15}
               className={phoneInputInvalid}
+              placeholder="8 800 555 35 35"
               value={phone}
               onChange={phoneChangeHandler}
               onBlur={phoneBlurHandler}
@@ -200,13 +196,6 @@ const CartForm: FC = () => {
             </p>
           </div>
           <div className={classes["btns-wrapper"]}>
-            <button
-              type="button"
-              className={classes["button-simple"]}
-              onClick={resetFormHandler}
-            >
-              Clear All
-            </button>
             <button
               type="submit"
               disabled={!formIsValid}
@@ -221,4 +210,4 @@ const CartForm: FC = () => {
   );
 };
 
-export default CartForm;
+export default React.memo(CartForm);

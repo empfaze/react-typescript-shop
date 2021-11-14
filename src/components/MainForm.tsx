@@ -45,15 +45,6 @@ const AuthForm: FC = () => {
   // form state
   const [formIsValid, setFormIsValid] = useState<boolean>(false);
 
-  // button name
-  const [buttonName, setButtonName] = useState("signup");
-  const leftButtonName = buttonName === "signup" ? "Sign Up" : "Login";
-  const rightButtonName = buttonName === "signup" ? "Login" : "Sign Up";
-  function buttonNameHandler() {
-    if (buttonName === "signup") setButtonName("login");
-    else setButtonName("signup");
-  }
-
   useEffect(() => {
     if (emailIsValid && passwordIsValid) setFormIsValid(true);
     else setFormIsValid(false);
@@ -78,24 +69,33 @@ const AuthForm: FC = () => {
     router.replace("/main/messenger-bags");
   }
 
+  let type: string;
   function submitHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const user = {
-      email: email,
-      password: password,
-    };
+    if (formIsValid) {
+      const user = {
+        email: email,
+        password: password,
+      };
 
-    let url;
-    if (buttonName === "signup") {
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBm2_AGArJO9rGAtXfjnzRvPZhWqq5cRdY";
-      sendToAuth(url, user, handleData);
-    } else {
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBm2_AGArJO9rGAtXfjnzRvPZhWqq5cRdY";
-      sendToAuth(url, user, handleData);
+      let url;
+      if (type === "signup") {
+        url =
+          "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBm2_AGArJO9rGAtXfjnzRvPZhWqq5cRdY";
+        sendToAuth(url, user, handleData);
+      } else if (type === "login") {
+        url =
+          "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBm2_AGArJO9rGAtXfjnzRvPZhWqq5cRdY";
+        sendToAuth(url, user, handleData);
+      }
     }
+  }
+  function signUpHandler() {
+    type = "signup";
+  }
+  function loginHandler() {
+    type = "login";
   }
 
   function resetHandler(): void {
@@ -104,7 +104,7 @@ const AuthForm: FC = () => {
     setFormIsValid(false);
   }
   function errorHandler(): void {
-    router.replace('/')
+    router.replace("/");
   }
 
   // para classes definition
@@ -125,10 +125,12 @@ const AuthForm: FC = () => {
       {error && (
         <>
           <p className={classes.error}>
-          Something went wrong...Please, check the validity of the entered data
-          and try again.
+            Something went wrong...Please, check the validity of the entered
+            data and try again.
           </p>
-          <button className={classes['error-btn']} onClick={errorHandler}>Try again</button>
+          <button className={classes["error-btn"]} onClick={errorHandler}>
+            Try again
+          </button>
         </>
       )}
       {!isLoading && !error && (
@@ -136,9 +138,9 @@ const AuthForm: FC = () => {
           <div>
             <label htmlFor="email" />
             <input
-              type="text"
+              type="email"
               id="email"
-              placeholder="Email"
+              placeholder="E-mail"
               className={emailInputInvalid}
               value={email}
               onChange={emailChangeHandler}
@@ -151,7 +153,7 @@ const AuthForm: FC = () => {
           <div>
             <label htmlFor="password" />
             <input
-              type="text"
+              type="password"
               id="password"
               placeholder="Password (min 7 chars)"
               className={passwordInputInvalid}
@@ -164,29 +166,29 @@ const AuthForm: FC = () => {
             </p>
           </div>
           <div className={classes["button-wrapper"]}>
+            <button
+              type="button"
+              className={classes["button-simple"]}
+              onClick={resetHandler}
+            >
+              Clear All
+            </button>
             <div className={classes["left-buttons"]}>
               <button
-                type="button"
-                className={classes["button-simple"]}
-                onClick={resetHandler}
+                type="submit"
+                className={classes["button-signup"]}
+                onClick={signUpHandler}
               >
-                Clear All
+                Sign Up
               </button>
               <button
                 type="submit"
                 className={classes["button-simple"]}
-                disabled={!formIsValid}
+                onClick={loginHandler}
               >
-                {leftButtonName}
+                Login
               </button>
             </div>
-            <button
-              type="button"
-              className={classes["button-simple"]}
-              onClick={buttonNameHandler}
-            >
-              {rightButtonName}
-            </button>
           </div>
         </form>
       )}

@@ -16,20 +16,32 @@
   position: fixed;
   top: 0;
   right: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 1rem 3.5rem;
+  -webkit-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
 }
 
 .success-wrapper {
   width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 
   position: absolute;
   top: 50%;
   right: 50%;
+  -webkit-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
   transform: translate(50%, -50%);
   z-index: 20;
 }
@@ -49,42 +61,81 @@
   border-radius: 1rem;
   cursor: pointer;
   border: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
+  -webkit-box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
 }
 .button-simple:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
   transform: translateY(-2px);
 }
 .button-simple:active {
+  -webkit-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
   transform: translateY(-1px);
 }
 
 .cartOpened {
+  -webkit-animation: OpenCartAnimation 0.3s ease-in;
   animation: OpenCartAnimation 0.3s ease-in;
 }
 .cartClosed {
+  -webkit-animation: CloseCartAnimation 0.3s ease-out;
   animation: CloseCartAnimation 0.3s ease-out;
+}
+
+@-webkit-keyframes OpenCartAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
 }
 
 @keyframes OpenCartAnimation {
   0% {
     opacity: 0;
+    -webkit-transform: translateX(100%);
     transform: translateX(100%);
   }
   100% {
     opacity: 1;
+    -webkit-transform: translateX(0);
     transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes CloseCartAnimation {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
   }
 }
 
 @keyframes CloseCartAnimation {
   0% {
     opacity: 1;
+    -webkit-transform: translateX(0);
     transform: translateX(0);
   }
   100% {
     opacity: 0;
+    -webkit-transform: translateX(100%);
     transform: translateX(100%);
   }
 }
