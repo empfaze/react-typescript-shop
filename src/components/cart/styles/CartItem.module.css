@@ -45,7 +45,7 @@
   grid-template-rows: -webkit-max-content;
   grid-template-rows: max-content;
   -ms-grid-columns: 6rem;
-  grid-template-columns: 6rem;
+  grid-template-columns: 6.5rem;
   grid-gap: 2rem;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -70,14 +70,17 @@
 .button {
   font-size: 2rem;
   border: none;
-  background-color: rgb(204, 202, 202);
+  background-color: transparent;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   width: 2.7rem;
   height: 2.7rem;
   border-radius: 50%;
   cursor: pointer;
-  color: white;
-  -webkit-box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  color: black;
   -webkit-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
@@ -91,9 +94,6 @@
   -webkit-transform: translateY(-1px);
   -ms-transform: translateY(-1px);
   transform: translateY(-1px);
-}
-.button:first-child {
-  padding-bottom: 0.6rem;
 }
 
 .desc-info {

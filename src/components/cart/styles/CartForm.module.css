@@ -9,7 +9,7 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
   outline: none;
-  border: 2px solid black;
+  border: 1px solid black;
 }
 .form input.invalid {
   border-color: red;
@@ -24,29 +24,22 @@
   justify-content: center;
 }
 .button-simple {
+  text-transform: uppercase;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   cursor: pointer;
+  background-color: white;
   border: none;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-.button-simple:hover {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-}
-.button-simple:active {
-  -webkit-transform: translateY(-1px);
-  -ms-transform: translateY(-1px);
-  transform: translateY(-1px);
+.button-simple:hover:not(:disabled) {
+  background-color: black;
+  color: white;
 }
 .button-simple:disabled {
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
   cursor: default;
 }
 

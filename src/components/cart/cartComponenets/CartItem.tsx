@@ -58,18 +58,18 @@ const CartItem: FC<FetchedProduct> = ({
       </div>
       <div className={classes["btn-wrapper"]}>
         <div className={classes["plus-minus"]}>
-          <button
+          <span
             className={classes.button}
             onClick={decQuantityHandler.bind(null, id, category)}
           >
             -
-          </button>
-          <button
+          </span>
+          <span
             className={classes.button}
             onClick={incQuantityHandler.bind(null, id)}
           >
             +
-          </button>
+          </span>
         </div>
         <div className={classes.trash}>
           <DeleteFromCart id={id} category={category} />

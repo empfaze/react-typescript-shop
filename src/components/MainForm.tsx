@@ -125,7 +125,7 @@ const AuthForm: FC = () => {
       {error && (
         <>
           <p className={classes.error}>
-            Something went wrong...Please, check the validity of the entered
+            Something went wrong...<br />Please, check the validity of the entered
             data and try again.
           </p>
           <button className={classes["error-btn"]} onClick={errorHandler}>
