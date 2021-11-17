@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { NavLink } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import { useTypedActions } from "../../hooks/useTypedActions";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
