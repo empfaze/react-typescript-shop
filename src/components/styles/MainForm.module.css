@@ -17,7 +17,7 @@
 .form input.invalid {
   border-color: red;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 25em) {
   .form input {
     width: 30rem;
     font-size: 2rem;
@@ -63,7 +63,7 @@
   -ms-transform: translateY(-1px);
   transform: translateY(-1px);
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 25em) {
   .button-simple {
     font-size: 1.5rem;
   }
@@ -85,7 +85,7 @@
   background-color: white;
   color: black;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 25em) {
   .button-signup {
     font-size: 1.5rem;
   }
