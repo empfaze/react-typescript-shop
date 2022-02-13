@@ -1,9 +1,11 @@
 .main-content {
-  display: -ms-grid;
+  width: 100%;
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, 30rem);
-  grid-gap: 4rem;
-  padding: 3rem 5rem 7rem;
+  grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
+  justify-content: center;
+  grid-gap: 3rem;
+  padding: 3rem;
 }
 .error {
   font-size: 4rem;
@@ -15,8 +17,6 @@
 }
 .show-products-enter-active {
   opacity: 1;
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 .show-products-exit {
@@ -24,33 +24,19 @@
 }
 .show-products-exit-active {
   opacity: 0;
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 
-@media only screen and (max-width: 68.75em) {
+@media (max-width: 81.25em) {
   .main-content {
-    grid-template-columns: repeat(auto-fit, 25rem);
     grid-gap: 2rem;
-    padding: 3rem 3rem 7rem;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   }
 }
 
-@media only screen and (max-width: 22.5em) {
+@media (max-width: 30em) {
   .main-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: column nowrap;
-    flex-flow: column nowrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    grid-template-columns: minmax(15rem, 25rem);
+    grid-template-rows: max-content;
   }
 }

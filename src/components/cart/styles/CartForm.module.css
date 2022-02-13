@@ -16,11 +16,7 @@
 }
 
 .btns-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 .button-simple {
@@ -31,13 +27,6 @@
   cursor: pointer;
   background-color: white;
   border: none;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
-.button-simple:hover:not(:disabled) {
-  background-color: black;
-  color: white;
 }
 .button-simple:disabled {
   cursor: default;
@@ -73,14 +62,5 @@
   border-radius: 2rem;
   border: none;
   cursor: pointer;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-.error-btn:hover {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
 }

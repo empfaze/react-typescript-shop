@@ -51,11 +51,15 @@ const useInput = (validateValue: (str: string) => boolean) => {
   const reset = () => {
     dispatchAction({ type: "RESET" });
   };
+  const markInputUntoched = () => {
+    valueBlurHandler();
+  };
 
   return {
     value: inputState.value,
     isValid: valueIsValid,
     hasError,
+    markInputUntoched,
     valueChangeHandler,
     valueBlurHandler,
     reset,

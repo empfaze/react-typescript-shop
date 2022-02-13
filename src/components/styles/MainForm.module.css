@@ -1,72 +1,46 @@
 .form {
-  text-align: center;
-  -webkit-animation: moveInBottom 0.75s ease-out 0.75s;
+  width: 100%;
+
   animation: moveInBottom 0.75s ease-out 0.75s;
-  -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
 
+.form-input-wrapper {
+  width: 100%;
+}
+
 .form input {
-  width: 40rem;
+  display: inline-block;
+  width: 100%;
   font-size: 2.5rem;
-  padding: 1rem;
+  line-height: 3rem;
+  padding: 0.7rem 1rem;
   border-radius: 1rem;
-  outline: none;
   border: 2px solid black;
 }
 .form input.invalid {
   border-color: red;
 }
-@media only screen and (max-width: 25em) {
-  .form input {
-    width: 30rem;
-    font-size: 2rem;
-  }
-}
 
 .button-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .left-buttons {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2.5rem 1fr;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2.5rem;
+  margin-left: 1rem;
 }
 
 .button-simple {
   font-size: 2rem;
   padding: 0.5rem 1rem;
-  border-radius: 1rem 1rem 1rem 1rem;
+  border-radius: 1rem;
   background-color: transparent;
   color: white;
   border: 1px solid white;
-
   cursor: pointer;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.button-simple:hover {
-  -webkit-transform: translateY(-3px);
-  -ms-transform: translateY(-3px);
-  transform: translateY(-3px);
-}
-.button-simple:active {
-  -webkit-transform: translateY(-1px);
-  -ms-transform: translateY(-1px);
-  transform: translateY(-1px);
-}
-@media only screen and (max-width: 25em) {
-  .button-simple {
-    font-size: 1.5rem;
-  }
 }
 
 .button-signup {
@@ -77,36 +51,28 @@
   cursor: pointer;
   border: none;
   border-bottom: 2px solid white;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .button-signup:hover {
   background-color: white;
   color: black;
 }
-@media only screen and (max-width: 25em) {
-  .button-signup {
-    font-size: 1.5rem;
-  }
-}
 
 .para-invalid-visible {
+  margin-left: 1.5rem;
   font-size: 1.5rem;
   color: red;
-  margin: 0;
   margin-bottom: 1rem;
 }
 .para-invalid-invisible {
+  margin-left: 1.5rem;
   visibility: hidden;
   font-size: 1.5rem;
   color: red;
-  margin: 0;
   margin-bottom: 1rem;
 }
 
 .error {
-  margin: 0;
   font-size: 1.7rem;
   color: red;
   text-align: center;
@@ -121,16 +87,29 @@
   background-color: transparent;
   border: 1px solid white;
   cursor: pointer;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
-.error-btn:hover {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
+
+@media (max-width: 50em) {
+  .form input {
+    font-size: 1.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .button-simple {
+    font-size: 1.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .button-signup {
+    font-size: 1.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .left-buttons {
+    grid-gap: 1.5rem;
+  }
 }
 
 @-webkit-keyframes moveInBottom {

@@ -1,29 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
-body {
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  box-sizing: inherit;
-  font-family: inherit;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+}
+.lock {
+  overflow: hidden;
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
-  font-family: "Oswald", sans-serif;
 }
 
-@media only screen and (max-width: 68.75em) {
-  html {
-    font-size: 50%;
-  }
-}
-@media only screen and (max-width: 54.375em) {
-  html {
-    font-size: 37.5%;
-  }
-}
-@media only screen and (max-width: 22.5em) {
-  html {
-    font-size: 25%;
-  }
+ul {
+  list-style: none;
 }

@@ -3,14 +3,6 @@
   height: 3.5rem;
   width: 3.5rem;
   cursor: pointer;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.cart-product:hover {
-  -webkit-transform: translateY(-1px);
-  -ms-transform: translateY(-1px);
-  transform: translateY(-1px);
 }
 
 .product-in-cart {

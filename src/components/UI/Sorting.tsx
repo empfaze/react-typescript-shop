@@ -101,29 +101,31 @@ const Sorting: FC = () => {
   }
 
   return (
-    <div className={classes["main-wrapper"]}>
-      <span className={classes.text}>Sorting</span>
-      <select
-        name="typeMain"
-        id="typeMain"
-        className={classes.select}
-        value={sortingState.mainType}
-        onChange={mainOptionsHandler}
-      >
-        <option value="price">by price</option>
-        <option value="rating">by rating</option>
-      </select>
-      <select
-        name="typeSecond"
-        id="typeSecond"
-        className={classes.select}
-        value={sortingState.secondaryType}
-        onChange={secondaryOptionshandler}
-      >
-        <option value="asc">ascending</option>
-        <option value="des">descending</option>
-      </select>
-    </div>
+    <section className={classes["sort"]}>
+      <div className={classes["main-wrapper"]}>
+        <span className={classes.text}>Sorting</span>
+        <select
+          name="typeMain"
+          id="typeMain"
+          className={classes.select}
+          value={sortingState.mainType}
+          onChange={mainOptionsHandler}
+        >
+          <option value="price">by price</option>
+          <option value="rating">by rating</option>
+        </select>
+        <select
+          name="typeSecond"
+          id="typeSecond"
+          className={classes.select}
+          value={sortingState.secondaryType}
+          onChange={secondaryOptionshandler}
+        >
+          <option value="asc">ascending</option>
+          <option value="des">descending</option>
+        </select>
+      </div>
+    </section>
   );
 };
 

@@ -29,6 +29,7 @@ const AuthForm: FC = () => {
     isValid: emailIsValid,
     hasError: emailHasError,
     valueChangeHandler: emailChangeHandler,
+    markInputUntoched: markEmailUntouched,
     valueBlurHandler: emailBlurHandler,
     reset: clearEmail,
   } = useInput(validateEmail);
@@ -37,6 +38,7 @@ const AuthForm: FC = () => {
     value: password,
     isValid: passwordIsValid,
     hasError: passwordHasError,
+    markInputUntoched: markPasswordUntouched,
     valueChangeHandler: passwordChangeHandler,
     valueBlurHandler: passwordBlurHandler,
     reset: clearPassword,
@@ -73,22 +75,26 @@ const AuthForm: FC = () => {
   function submitHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (formIsValid) {
-      const user = {
-        email: email,
-        password: password,
-      };
+    if (!formIsValid) {
+      markEmailUntouched();
+      markPasswordUntouched();
+      return;
+    }
 
-      let url;
-      if (type === "signup") {
-        url =
-          "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBm2_AGArJO9rGAtXfjnzRvPZhWqq5cRdY";
-        sendToAuth(url, user, handleData);
-      } else if (type === "login") {
-        url =
-          "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBm2_AGArJO9rGAtXfjnzRvPZhWqq5cRdY";
-        sendToAuth(url, user, handleData);
-      }
+    const user = {
+      email: email,
+      password: password,
+    };
+
+    let url;
+    if (type === "signup") {
+      url =
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBm2_AGArJO9rGAtXfjnzRvPZhWqq5cRdY";
+      sendToAuth(url, user, handleData);
+    } else if (type === "login") {
+      url =
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBm2_AGArJO9rGAtXfjnzRvPZhWqq5cRdY";
+      sendToAuth(url, user, handleData);
     }
   }
   function signUpHandler() {
@@ -125,8 +131,9 @@ const AuthForm: FC = () => {
       {error && (
         <>
           <p className={classes.error}>
-            Something went wrong...<br />Please, check the validity of the entered
-            data and try again.
+            Something went wrong...
+            <br />
+            Please, check the validity of the entered data and try again.
           </p>
           <button className={classes["error-btn"]} onClick={errorHandler}>
             Try again
@@ -135,7 +142,7 @@ const AuthForm: FC = () => {
       )}
       {!isLoading && !error && (
         <form onSubmit={submitHandler} className={classes.form}>
-          <div>
+          <div className="form-input-wrapper">
             <label htmlFor="email" />
             <input
               type="email"
@@ -147,15 +154,15 @@ const AuthForm: FC = () => {
               onBlur={emailBlurHandler}
             />
             <p className={emailParaInvalid}>
-              Email adress must contain "@" symbol.
+              Please, enter correct email-adress.
             </p>
           </div>
-          <div>
+          <div className="form-input-wrapper">
             <label htmlFor="password" />
             <input
               type="password"
               id="password"
-              placeholder="Password (min 7 chars)"
+              placeholder="Password"
               className={passwordInputInvalid}
               value={password}
               onChange={passwordChangeHandler}

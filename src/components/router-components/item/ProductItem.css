@@ -1,13 +1,11 @@
 .product-wrapper {
-  display: inline-block;
-  height: auto;
+  width: 100%;
   position: relative;
   background-color: white;
   color: black;
   text-align: center;
   overflow: hidden;
-  border-radius: 2rem 2rem 2rem 2rem;
-  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
@@ -16,14 +14,8 @@
   top: 1rem;
   left: 1.5rem;
   width: 4.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 .rating {
@@ -38,8 +30,11 @@
 }
 
 .product-image {
-  width: 25rem;
+  width: 100%;
+  max-width: 32.8rem;
+  margin: 0 auto;
   height: auto;
+  display: block;
 }
 
 .name {

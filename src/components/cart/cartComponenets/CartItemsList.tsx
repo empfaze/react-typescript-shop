@@ -12,11 +12,9 @@ const CartItemsList: FC = () => {
     0
   );
 
-  const wrapperClassName = cartItems.length > 2 ? "main-wrapper-big" : "";
-
   return (
     <>
-      <div className={classes[wrapperClassName]}>
+      <div className={classes["main-wrapper-simple"]}>
         <TransitionGroup className={classes["main-wrapper"]}>
           {cartItems.map((item) => (
             <CSSTransition

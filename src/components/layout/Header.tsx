@@ -4,7 +4,7 @@ import { useTypedDispatch } from "../../hooks/useTypedDispatch";
 import { authActions } from "../../store/slices/auth";
 import Cart from "../cart/Cart";
 import CartPicture from "../cart/cartComponenets/CartPicture";
-import MainNavigation from "./MainNavigation";
+import Navigation from "./Navigation";
 
 import classes from "../../pages/styles/Main.module.css";
 
@@ -28,7 +28,7 @@ const Header: FC = () => {
     <>
       <Cart />
       <nav className={classes["main-nav"]}>
-        <MainNavigation />
+        <Navigation />
         <div className={classes["right-side"]}>
           <CartPicture />
           <button onClick={logoutHandler} className={classes.logout}>

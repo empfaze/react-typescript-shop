@@ -1,28 +1,17 @@
 .picture-wrapper {
-  display: inline-block;
   position: relative;
 
   cursor: pointer;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
-}
-.picture-wrapper:hover {
-  -webkit-transform: translateY(-3px);
-  -ms-transform: translateY(-3px);
-  transform: translateY(-3px);
-}
-.picture-wrapper:active {
-  -webkit-transform: translateY(-1px);
-  -ms-transform: translateY(-1px);
-  transform: translateY(-1px);
 }
 
 .picture {
+  display: block;
   height: 5.5rem;
   width: 5.5rem;
 }
 .quantity {
+  display: inline-block;
   font-size: 1.2rem;
   font-weight: 700;
   background-color: white;
@@ -33,4 +22,20 @@
   position: absolute;
   top: 1.3rem;
   left: 1.65rem;
+}
+
+@media (max-width: 50em) {
+  .picture {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .quantity {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0 0.55rem;
+
+    top: 1.1rem;
+    left: 1.23rem;
+  }
 }

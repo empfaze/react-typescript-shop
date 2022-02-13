@@ -6,13 +6,16 @@ import classes from "../styles/CartHeader.module.css";
 
 const CartHeader: FC = () => {
   const dispatch = useTypedDispatch();
+  const body = document.body;
+
   function closeHandler(): void {
     dispatch(cartActions.closeCart());
+    body.classList.remove("lock");
   }
 
   return (
     <div className={classes["header-container"]}>
-      <p className={classes["para"]}>Shopping Cart</p>
+      <span className={classes["para"]}>Shopping Cart</span>
       <button className={classes["btn"]} onClick={closeHandler}>
         &times;
       </button>

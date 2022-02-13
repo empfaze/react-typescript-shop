@@ -3,33 +3,29 @@
   background-image: url("../../assets/bg1.jpg");
   background-size: 100%;
   background-position: top;
+  background-color: rgb(34, 33, 33);
+  min-height: 100vh;
+  height: auto;
 }
 
 .main-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 2.5rem 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2.5rem 3rem;
+  position: relative;
 }
 
 .right-side {
-  width: 27rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  width: 100%;
+  max-width: 22rem;
+
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
+
+  margin-left: 2rem;
 }
 
 .logout {
@@ -41,24 +37,32 @@
   background-color: white;
   color: black;
   padding: 1rem 3rem;
-  margin-right: 5rem;
   border-radius: 5rem;
   border: none;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .logout:hover {
   background-color: black;
   color: white;
-  -webkit-transform: translateY(-3px);
-  -ms-transform: translateY(-3px);
-  transform: translateY(-3px);
 }
 .logout:active {
   background-color: black;
   color: white;
-  -webkit-transform: translateY(-1px);
-  -ms-transform: translateY(-1px);
-  transform: translateY(-1px);
+}
+
+@media (max-width: 75em) {
+  .main-nav {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 50em) {
+  .right-side {
+    max-width: 15rem;
+  }
+
+  .logout {
+    font-size: 1.6rem;
+    padding: 0.5rem 2rem;
+  }
 }
