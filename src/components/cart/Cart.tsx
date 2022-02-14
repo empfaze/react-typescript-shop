@@ -11,10 +11,8 @@ const Cart: FC = () => {
   const { cartIsShown } = useTypedSelector((state) => state.cart);
   const dispatch = useTypedDispatch();
 
-  const body = document.body;
-
   function closeHandler(e: MouseEvent<HTMLDivElement>): void {
-    body.classList.remove("lock");
+    document.body.classList.remove("lock");
 
     if (success) {
       dispatch(cartActions.setSuccessfullState());

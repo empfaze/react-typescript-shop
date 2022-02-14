@@ -9,6 +9,7 @@ const CartEmpty: FC = () => {
   const dispatch = useTypedDispatch();
 
   function closeHandler(): void {
+    document.body.classList.remove("lock");
     dispatch(cartActions.closeCart());
   }
 

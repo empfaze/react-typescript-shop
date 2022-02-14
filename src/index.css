@@ -12,8 +12,9 @@ body {
   font-family: "Oswald", sans-serif;
 }
 .lock {
+  width: 100%;
+  position: fixed;
   overflow: hidden;
-  height: 100vh;
 }
 
 html {

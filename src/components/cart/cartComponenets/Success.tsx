@@ -9,6 +9,7 @@ const Success: FC = () => {
   const dispatch = useTypedDispatch();
 
   function closeCart(e: MouseEvent<HTMLButtonElement>): void {
+    document.body.classList.remove("lock");
     dispatch(cartActions.setSuccessfullState());
     dispatch(cartActions.closeCart());
   }
