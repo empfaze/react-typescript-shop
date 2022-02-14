@@ -1,7 +1,6 @@
 .main-wrapper-simple {
   width: 100%;
   flex: 0 1 auto;
-  max-height: 32rem;
   height: auto;
   overflow: scroll;
   margin: 0 auto 1rem;

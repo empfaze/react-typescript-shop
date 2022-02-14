@@ -15,10 +15,10 @@ const CartHeader: FC = () => {
 
   return (
     <div className={classes["header-container"]}>
-      <span className={classes["para"]}>Shopping Cart</span>
       <button className={classes["btn"]} onClick={closeHandler}>
         &times;
       </button>
+      <span className={classes["para"]}>Shopping Cart</span>
     </div>
   );
 };

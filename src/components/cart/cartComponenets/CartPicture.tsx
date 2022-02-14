@@ -10,11 +10,10 @@ import classes from "../styles/CartPicture.module.css";
 const CartPicture: FC = () => {
   const dispatch = useTypedDispatch();
   const cartQuantity = useTypedSelector((state) => state.cart.items.length);
-  const body = document.body;
 
   function openHandler(): void {
     dispatch(cartActions.openCart());
-    body.classList.add("lock");
+    document.body.classList.add("lock");
   }
 
   return (
