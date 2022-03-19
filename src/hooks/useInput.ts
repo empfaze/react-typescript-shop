@@ -13,7 +13,7 @@ const useInput = (validateValue: (str: string) => boolean) => {
     if (action.type === "CHANGE") {
       return {
         value: action.value!,
-        isTouched: state.isTouched,
+        isTouched: true,
       };
     }
 

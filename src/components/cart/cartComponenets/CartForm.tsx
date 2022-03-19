@@ -11,7 +11,7 @@ import { ProductsActions } from "../../../store/slices/allProducts";
 import usePhone from "../../../hooks/usePhone";
 
 function validateName(str: string) {
-  return str.trim() !== "";
+  return str.trim().length > 0;
 }
 function validatePhone(str: string) {
   return str.length === 15;

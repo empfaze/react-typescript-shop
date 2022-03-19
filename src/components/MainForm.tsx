@@ -13,12 +13,14 @@ import { authActions } from "../store/slices/auth";
 function validateEmail(str: string) {
   return str.match(
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  )
+  ) &&
+    !str.trim().includes(">") &&
+    !str.trim().includes("<")
     ? true
     : false;
 }
 function validatePassword(str: string) {
-  return str.trim().length > 6 && !str.includes(">") && !str.includes("<");
+  return str.trim().length > 6;
 }
 
 const AuthForm: FC = () => {
@@ -79,11 +81,7 @@ const AuthForm: FC = () => {
   function submitHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (!formIsValid) {
-      markEmailUntouched();
-      markPasswordUntouched();
-      return;
-    }
+    if (!formIsValid) return;
 
     const user = {
       email: email,
