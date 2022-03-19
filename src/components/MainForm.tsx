@@ -11,10 +11,14 @@ import { authActions } from "../store/slices/auth";
 
 // validation functions
 function validateEmail(str: string) {
-  return str.trim().includes("@");
+  return str.match(
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  )
+    ? true
+    : false;
 }
 function validatePassword(str: string) {
-  return str.trim().length > 6;
+  return str.trim().length > 6 && !str.includes(">") && !str.includes("<");
 }
 
 const AuthForm: FC = () => {

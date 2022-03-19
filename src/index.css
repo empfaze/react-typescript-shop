@@ -24,3 +24,7 @@ html {
 ul {
   list-style: none;
 }
+
+input {
+  outline: none;
+}
