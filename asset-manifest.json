@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react-typescript-shop/static/css/main.077c0979.chunk.css",
-    "main.js": "/react-typescript-shop/static/js/main.743d209e.chunk.js",
-    "main.js.map": "/react-typescript-shop/static/js/main.743d209e.chunk.js.map",
+    "main.css": "/react-typescript-shop/static/css/main.2324b1d2.chunk.css",
+    "main.js": "/react-typescript-shop/static/js/main.a590e619.chunk.js",
+    "main.js.map": "/react-typescript-shop/static/js/main.a590e619.chunk.js.map",
     "runtime-main.js": "/react-typescript-shop/static/js/runtime-main.9b39865f.js",
     "runtime-main.js.map": "/react-typescript-shop/static/js/runtime-main.9b39865f.js.map",
     "static/js/2.f0d4e4c0.chunk.js": "/react-typescript-shop/static/js/2.f0d4e4c0.chunk.js",
     "static/js/2.f0d4e4c0.chunk.js.map": "/react-typescript-shop/static/js/2.f0d4e4c0.chunk.js.map",
     "index.html": "/react-typescript-shop/index.html",
-    "static/css/main.077c0979.chunk.css.map": "/react-typescript-shop/static/css/main.077c0979.chunk.css.map",
+    "static/css/main.2324b1d2.chunk.css.map": "/react-typescript-shop/static/css/main.2324b1d2.chunk.css.map",
     "static/js/2.f0d4e4c0.chunk.js.LICENSE.txt": "/react-typescript-shop/static/js/2.f0d4e4c0.chunk.js.LICENSE.txt",
     "static/media/Auth.module.css": "/react-typescript-shop/static/media/bg1.afe688f7.jpg",
     "static/media/like.1d224b07.png": "/react-typescript-shop/static/media/like.1d224b07.png"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.9b39865f.js",
     "static/js/2.f0d4e4c0.chunk.js",
-    "static/css/main.077c0979.chunk.css",
-    "static/js/main.743d209e.chunk.js"
+    "static/css/main.2324b1d2.chunk.css",
+    "static/js/main.a590e619.chunk.js"
   ]
 }
